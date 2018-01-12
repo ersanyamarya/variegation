@@ -1,0 +1,9 @@
+.tile {
+  padding: 10dp;
+  box-shadow: #555 2px 2px 12px 2px;
+}
+
+.example-margin {
+  height: 70%;
+  padding: 20px;
+}

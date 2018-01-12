@@ -1,0 +1,25 @@
+{
+    "name": "SmartRoomWebServer",
+    "license": "MIT",
+    "version": "1.0.0",
+    "description": "This is the web server for MySmartRoomProject",
+    "main": "app.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "node app"
+    },
+    "dependencies": {
+        "bcryptjs": "*",
+        "body-parser": "*",
+        "cors": "*",
+        "express": "*",
+        "jsonwebtoken": "*",
+        "mongoose": "*",
+        "mqtt": "*",
+        "passport": "*",
+        "passport-jwt": "*",
+        "socket.io": "*"
+    },
+    "author": "Sanyam Arya",
+    "devDependencies": {}
+}

@@ -1,0 +1,20 @@
+<mat-grid-list cols="4" rowHeight="2:1" [gutterSize]="10">
+  <mat-grid-tile class="tile" [colspan]="2" [rowspan]="1" [style.background-color]="colorValue">
+    <input type="color" [(ngModel)]="colorValue" name="colorValue">
+  </mat-grid-tile>
+  <mat-grid-tile class="tile" [colspan]="2" [rowspan]="2">
+    RED
+    <mat-slider class="example-margin" color="warn" [max]="255" [min]="0" [step]="1" [thumb-label]="true" [(ngModel)]="redValue" [vertical]="true"></mat-slider>
+    GREEN
+    <mat-slider class="example-margin" [max]="255" [min]="0" [step]="1" [thumb-label]="true" [(ngModel)]="greenValue" [vertical]="true"></mat-slider>
+    BLUE
+    <mat-slider class="example-margin" color="warn" [max]="255" [min]="0" [step]="1" [thumb-label]="true" [(ngModel)]="blueValue" [vertical]="true"></mat-slider>
+    WHITE
+    <mat-slider class="example-margin" [max]="255" [min]="0" [step]="1" [thumb-label]="true" [(ngModel)]="whiteValue" [vertical]="true"></mat-slider>
+    YELLOW
+    <mat-slider class="example-margin" color="warn" [max]="255" [min]="0" [step]="1" [thumb-label]="true" [(ngModel)]="yellowValue" [vertical]="true"></mat-slider>
+  </mat-grid-tile>
+  <mat-grid-tile class="tile" [colspan]="2" [rowspan]="1" [style.background-color]="colorValue">
+    <input type="text" [(ngModel)]="colorName" name="colorValue">
+  </mat-grid-tile>
+</mat-grid-list>

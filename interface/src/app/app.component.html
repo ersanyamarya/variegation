@@ -1,0 +1,34 @@
+<mat-toolbar color="accent">
+  <button mat-icon-button (click)="sidenav.toggle()">
+    <mat-icon>line_weight</mat-icon>
+  </button>
+  <span>My Smart Room</span>
+  <span class="example-spacer"></span>
+  <button mat-icon-button [matMenuTriggerFor]="menu">
+    <mat-icon>more_vert</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item (click)="displaySection='Chat'">
+      <mat-icon>line_weight</mat-icon>
+      <span>Chat</span>
+    </button>
+    <button mat-menu-item (click)="displaySection='Profile'">
+      <mat-icon>accessibility</mat-icon>
+      <span>Profile</span>
+    </button>
+    <button mat-menu-item (click)="onLogoutClick()">
+      <mat-icon>settings_power</mat-icon>
+      <span>Logout</span>
+    </button>
+  </mat-menu>
+</mat-toolbar>
+
+<mat-sidenav-container class="container">
+  <mat-sidenav #sidenav class="sidenav" mode="push">
+    <button mat-raised-button color="primary" (click)="sidenav.close()">One</button><br>
+  </mat-sidenav>
+  <mat-sidenav-content class="sidenav-content">
+<app-main></app-main>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+<!-- style="overflow: scroll;" #scrollMe [scrollTop]="scrollMe.scrollHeight" -->
