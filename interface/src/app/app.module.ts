@@ -9,8 +9,8 @@ import { AppRoutingModule } from './app-routing.module';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatButtonModule, MatCheckboxModule, MatToolbarModule, MatIconModule,
   MatSidenavModule, MatMenuModule, MatCardModule, MatListModule, MatGridListModule,
-  MatSliderModule, MatInputModule, MatSelectModule, MatButtonToggleModule,
-  MatSlideToggleModule} from '@angular/material';
+  MatSlideToggleModule, MatInputModule, MatSelectModule, MatButtonToggleModule,
+  MatSliderModule} from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { MainComponent } from './components/main/main.component';
