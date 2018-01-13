@@ -1,31 +1,32 @@
 .tile {
-  padding: 10dp;
-  box-shadow: #555 2px 2px 12px 2px;
+    padding: 10dp;
+    box-shadow: rgba(244, 67, 54, 0.5) 2px 2px 12px 2px;
 }
 
 .mySlider {
-  height: 70%;
-  padding: 20px;
+    height: 70%;
+    padding: 20px;
 }
 
 .rgbForm {
-  padding: 10px;
-  margin: 10px;
-  font-size: 150%;
+    padding: 10px;
+    margin: 10px;
+    font-size: 150%;
 }
 
 .colorPicker {
-  padding: 5px;
-  width: 50%;
-  height: 50%;
+    padding: 5px;
+    width: 50%;
+    height: 50%;
 }
 
 .modesSelector {
-  font-size: 120%;
-  background-color: #FFD740;
+    font-size: 120%;
+    /* background-color: rgba(190, 80, 80); */
 }
-.modeButton{
-  padding: 10px;
-  margin: 10px;
-  font-size: 120%;
+
+.modeButton {
+    padding: 10px;
+    margin: 10px;
+    font-size: 120%;
 }
