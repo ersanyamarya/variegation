@@ -3,7 +3,29 @@
   box-shadow: #555 2px 2px 12px 2px;
 }
 
-.example-margin {
+.mySlider {
   height: 70%;
   padding: 20px;
+}
+
+.rgbForm {
+  padding: 10px;
+  margin: 10px;
+  font-size: 150%;
+}
+
+.colorPicker {
+  padding: 5px;
+  width: 50%;
+  height: 50%;
+}
+
+.modesSelector {
+  font-size: 120%;
+  background-color: #FFD740;
+}
+.modeButton{
+  padding: 10px;
+  margin: 10px;
+  font-size: 120%;
 }

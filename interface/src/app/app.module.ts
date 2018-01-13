@@ -9,7 +9,8 @@ import { AppRoutingModule } from './app-routing.module';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatButtonModule, MatCheckboxModule, MatToolbarModule, MatIconModule,
   MatSidenavModule, MatMenuModule, MatCardModule, MatListModule, MatGridListModule,
-  MatSliderModule, MatInputModule,MatSelectModule} from '@angular/material';
+  MatSliderModule, MatInputModule, MatSelectModule, MatButtonToggleModule,
+  MatSlideToggleModule} from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { MainComponent } from './components/main/main.component';
@@ -22,10 +23,10 @@ import { MainComponent } from './components/main/main.component';
   ],
   imports: [
     BrowserModule, AppRoutingModule, BrowserAnimationsModule,
-    FormsModule, HttpModule
-    MatButtonModule, MatCheckboxModule, MatToolbarModule, MatIconModule,
-    MatSidenavModule, MatMenuModule, MatCardModule, MatListModule,
-    MatGridListModule, MatSliderModule, MatInputModule,MatSelectModule
+    FormsModule, HttpModule, MatButtonModule, MatCheckboxModule,
+    MatToolbarModule, MatIconModule, MatSidenavModule, MatMenuModule,
+    MatCardModule, MatListModule, MatGridListModule, MatSliderModule,
+    MatInputModule, MatSelectModule, MatButtonToggleModule, MatSlideToggleModule
   ],
   providers: [],
   bootstrap: [AppComponent]
