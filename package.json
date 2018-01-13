@@ -1,8 +1,8 @@
 {
-    "name": "SmartRoomWebServer",
+    "name": "variegation",
     "license": "MIT",
     "version": "1.0.0",
-    "description": "This is the web server for MySmartRoomProject",
+    "description": "This is the web server for variegation",
     "main": "app.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
