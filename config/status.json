@@ -1,0 +1,10 @@
+{
+    "led": {
+        "red": 113,
+        "green": 209,
+        "blue": 51,
+        "white": 0,
+        "yellow": 0
+    },
+    "mode": "colorMyRoom"
+}

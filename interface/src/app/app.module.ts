@@ -6,6 +6,8 @@ import { HttpModule } from '@angular/http';
 
 import { AppRoutingModule } from './app-routing.module';
 
+import {StatusService} from './services/status.service';
+
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatButtonModule, MatCheckboxModule, MatToolbarModule, MatIconModule,
   MatSidenavModule, MatMenuModule, MatCardModule, MatListModule, MatGridListModule,
@@ -28,7 +30,7 @@ import { MainComponent } from './components/main/main.component';
     MatCardModule, MatListModule, MatGridListModule, MatSliderModule,
     MatInputModule, MatSelectModule, MatButtonToggleModule, MatSlideToggleModule
   ],
-  providers: [],
+  providers: [StatusService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

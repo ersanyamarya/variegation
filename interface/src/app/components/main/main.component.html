@@ -48,10 +48,10 @@
             </mat-button-toggle>
         </mat-button-toggle-group>
     </mat-grid-tile>
-    <mat-grid-tile class="tile" [colspan]="2" [rowspan]="1" *ngIf="lightMode!='partyMode'">
+    <mat-grid-tile class="tile" [colspan]="2" [rowspan]="1">
         <mat-slide-toggle class="modeButton" [(ngModel)]="autoSync" color="warn">
             <mat-icon>perm_data_setting</mat-icon> Direct Sync option</mat-slide-toggle>
-        <button mat-raised-button class="modeButton" color="primary" *ngIf="!autoSync">
+        <button mat-raised-button class="modeButton" color="primary" *ngIf="!autoSync" (click)="setStatus()">
       <mat-icon>format_painter</mat-icon> Spread Colors </button>
     </mat-grid-tile>
 </mat-grid-list>
