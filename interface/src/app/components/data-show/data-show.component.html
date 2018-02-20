@@ -1,0 +1,99 @@
+<mat-grid-list cols="4" rowHeight="11:5" [gutterSize]="10">
+    <mat-grid-tile class="tile" [colspan]="1" [rowspan]="3">
+
+        <div>
+            <p class="headOne">
+                <img src="assets/memory.png" alt="Memory" height="50" width="50">
+                <b> Gateway Memory <br> Information </b> </p>
+            <mat-divider></mat-divider>
+            <p class="otherData"> <b> Total Memory: </b> &nbsp; {{data.cpu.totalmem}}</p>
+            <p class="otherData"> <b> Free Memory: </b> &nbsp; {{data.cpu.freemem}}</p>
+            <p class="otherData"> <b> Used Memory: </b> &nbsp; {{data.cpu.usedmem}}</p>
+            <mwl-gauge max={{data.cpu.totalmem}} [dialStartAngle]="30" [dialEndAngle]="150" value={{data.cpu.usedmem}} [animated]="true" [animationDuration]="1">
+            </mwl-gauge>
+        </div>
+    </mat-grid-tile>
+    <mat-grid-tile class="tile" [colspan]="1" [rowspan]="2">
+        <!-- [style.background-color]="colorValue" -->
+        <div>
+            <p class="headOne">
+                <img src="assets/atmosphere.png" alt="atmosphere" height="50" width="50">
+                <b>Atmosphere</b> </p>
+            <mat-divider></mat-divider>
+            <p>
+
+                <b> <span class="temperature">{{data.weatherData.temp}}</span>
+                <span class="deg"> &nbsp; &#x2103;</span>
+              </b>
+            </p>
+            <mat-divider></mat-divider>
+            <p class="otherData"> <b>Humidity: </b> &nbsp; {{data.weatherData.humidity}} % </p>
+
+        </div>
+    </mat-grid-tile>
+
+
+    <mat-grid-tile class=" tile " [colspan]="1 " [rowspan]="2 ">
+        <div>
+            <p class="headOne">
+                <img src="assets/room.png" alt="room" height="50" width="50">
+
+                <b>Room</b> </p>
+            <mat-divider></mat-divider>
+            <p> <b>
+                <span class="temperature">{{data.dht.temp}}</span>
+                <span class="deg"> &nbsp; &#x2103;</span>
+              </b>
+            </p>
+            <mat-divider></mat-divider>
+            <p class="otherData"> <b>Humidity: </b> &nbsp; {{data.dht.humidity}} % </p>
+        </div>
+
+    </mat-grid-tile>
+
+    <mat-grid-tile class="tile" [colspan]="1" [rowspan]="3">
+
+        <div>
+
+            <p class="headOne">
+                <img src="assets/cpu.png" alt="Cpu" height="50" width="50">
+                <b> CPU <br> Temperature: </b> </p>
+            <p class="temperature"> <b> {{data.cpu.cpuTemp/1000}} &#x2103; </b></p>
+            <mat-divider></mat-divider>
+            <p class="headOne" *ngIf="data.cpu.fanStatus"> <b>Cooling </b></p>
+            <p class="headOne" *ngIf="!data.cpu.fanStatus"> <b>CPU is cool</b></p>
+            <div class="fanBlades">
+                <img src="assets/fan.png" alt="Fan Status" height="200" width="200" [ngClass]="{'loading': data.cpu.fanStatus == true}">
+            </div>
+        </div>
+
+    </mat-grid-tile>
+    <mat-grid-tile class="tile " [colspan]="2" [rowspan]="2">
+        <div>
+            <p class="headOne">
+                <img src="assets/platform.png" alt="Platform" height="50" width="50">
+
+                <b>Platform: </b> &nbsp; <span class="value">{{data.cpu.platform}}</span></p>
+            <mat-divider></mat-divider>
+            <p class="otherData"> <b>Release: </b> &nbsp; {{data.cpu.release}}</p>
+            <p class="otherData"> <b>Updated at: </b> &nbsp; {{data.updatedAt}}</p>
+        </div>
+    </mat-grid-tile>
+    <mat-grid-tile class="tile" [colspan]="1" [rowspan]="1">
+        <div>
+            <p class="headOne">
+                <img src="assets/weather.png" alt="Weather" height="50" width="50">
+                <b>Weather: </b> &nbsp; <span class="value"> {{data.weatherData.weather}} </span></p>
+
+            <p class="headOne">
+                <img src="assets/wind.png" alt="wind" height="50" width="50">
+                <b>Wind Speed: </b> <span class="value"> &nbsp; {{data.weatherData.wind}}</span></p>
+
+        </div>
+    </mat-grid-tile>
+
+    <mat-grid-tile class="tile" [colspan]="1" [rowspan]="1">
+        <button mat-raised-button class="modeButton" [ngClass]="{'modesSelector': speakerStatus == true}" (click)="onSpeakerClick()">
+        <mat-icon>speaker</mat-icon> Speakers </button>
+    </mat-grid-tile>
+</mat-grid-list>

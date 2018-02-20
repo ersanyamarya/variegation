@@ -1,3 +1,28 @@
 /* You can add global styles to this file, and also import other style files */
 
 @import '~@angular/material/prebuilt-themes/pink-bluegrey.css';
+mwl-gauge {
+    width: 250px;
+    height: 250px;
+    display: block;
+    padding: 10px;
+}
+
+mwl-gauge>.gauge>.dial {
+    stroke: #f44336;
+    stroke-width: 8%;
+    fill: rgba(0, 0, 0, 0);
+}
+
+mwl-gauge>.gauge>.value {
+    stroke: #8bc34a;
+    stroke-width: 8%;
+    fill: rgba(0, 0, 0, 0);
+}
+
+mwl-gauge>.gauge>.value-text {
+    fill: rgb(250, 250, 250);
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 1em;
+}

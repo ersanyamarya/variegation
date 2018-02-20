@@ -11,7 +11,7 @@ const cors = require("cors");
 const mongoose = require("mongoose");
 const config = require("./config/utils");
 
-mongoose.connect(config.database, { useMongoClient: true });
+//mongoose.connect(config.database);
 mongoose.connection.on("connected", () => {
     console.log("Connected to database " + config.database);
 });
@@ -39,7 +39,7 @@ module.exports.SOCKETIO = io;
 
 const api = require("./routes/api");
 
-const port = process.env.PORT || 9090;
+const port = process.env.PORT || 8888;
 
 app.use(cors());
 app.use(express.static(path.join(__dirname, "public")));

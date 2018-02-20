@@ -13,22 +13,28 @@ import {MatButtonModule, MatCheckboxModule, MatToolbarModule, MatIconModule,
   MatSidenavModule, MatMenuModule, MatCardModule, MatListModule, MatGridListModule,
   MatSlideToggleModule, MatInputModule, MatSelectModule, MatButtonToggleModule,
   MatSliderModule} from '@angular/material';
+  import { GaugeModule } from 'angular-gauge';
 
 import { AppComponent } from './app.component';
 import { MainComponent } from './components/main/main.component';
+import { DataShowComponent } from './components/data-show/data-show.component';
+import { MusicboxComponent } from './components/musicbox/musicbox.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    MainComponent
+    MainComponent,
+    DataShowComponent,
+    MusicboxComponent
   ],
   imports: [
     BrowserModule, AppRoutingModule, BrowserAnimationsModule,
     FormsModule, HttpModule, MatButtonModule, MatCheckboxModule,
     MatToolbarModule, MatIconModule, MatSidenavModule, MatMenuModule,
     MatCardModule, MatListModule, MatGridListModule, MatSliderModule,
-    MatInputModule, MatSelectModule, MatButtonToggleModule, MatSlideToggleModule
+    MatInputModule, MatSelectModule, MatButtonToggleModule, MatSlideToggleModule,
+    GaugeModule.forRoot()
   ],
   providers: [StatusService],
   bootstrap: [AppComponent]

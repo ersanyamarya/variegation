@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { StatusService } from "../../services/status.service";
 import { stagger } from "@angular/animations/src/animation_metadata";
+import * as io from "socket.io-client";
 @Component({
   selector: "app-main",
   templateUrl: "./main.component.html",
@@ -12,10 +13,22 @@ export class MainComponent implements OnInit {
   blueValue = 51;
   whiteValue = 0;
   yellowValue = 0;
-  lightMode = "partyMode";
+  lightMode = "PARTYMODE";
   autoSync = false;
   colorValue = "#333333";
-  constructor(private statusService: StatusService) {}
+  socket;
+  constructor(private statusService: StatusService) {
+    this.socket = io('http://35.154.179.244:8888/ws');
+    this.socket.on('status', msg => {
+      this.redValue = msg.led.red;
+      this.greenValue = msg.led.green;
+      this.blueValue = msg.led.blue;
+      this.whiteValue = msg.led.white;
+      this.yellowValue = msg.led.yellow;
+      this.lightMode = msg.mode;
+      this.setColorsOnUi();
+    });
+  }
   ngOnInit() {
     this.statusService.getStatus().subscribe(data => {
       if (data.success) {
@@ -32,14 +45,15 @@ export class MainComponent implements OnInit {
     });
   }
   onColorPickerChange() {
+    this.whiteValue = 0;
+    this.yellowValue = 0;
     const COLORS = this.hexToRgb(this.colorValue);
     this.redValue = COLORS.r;
     this.blueValue = COLORS.b;
     this.greenValue = COLORS.g;
-    if (this.lightMode === "readMode") {
-      this.whiteValue = 0;
-      this.yellowValue = 0;
-      this.lightMode = "colorMyRoom";
+
+    if (this.lightMode === 'READMODE') {
+      this.lightMode = 'COLORMYROOM';
     }
     if (this.autoSync) this.setStatus();
   }
@@ -49,23 +63,23 @@ export class MainComponent implements OnInit {
     if (this.blueValue > 255) this.blueValue = 255;
     if (this.whiteValue > 255) this.whiteValue = 255;
     if (this.yellowValue > 255) this.yellowValue = 255;
-    if (this.lightMode === "readMode") {
+    if (this.lightMode === 'READMODE') {
       this.whiteValue = 0;
       this.yellowValue = 0;
-      this.lightMode = "colorMyRoom";
+      this.lightMode = 'COLORMYROOM';
     }
     this.setColorsOnUi();
     if (this.autoSync) this.setStatus();
   }
   onModeCHange() {
-    if (this.lightMode === "readMode") {
+    if (this.lightMode === 'READMODE') {
       this.redValue = 0;
       this.greenValue = 0;
       this.blueValue = 0;
       this.whiteValue = 120;
       this.yellowValue = 255;
       this.setColorsOnUi();
-    } else if (this.lightMode === "partyMode") {
+    } else if (this.lightMode === 'PARTYMODE') {
       this.redValue = 51;
       this.greenValue = 51;
       this.blueValue = 51;
@@ -77,7 +91,7 @@ export class MainComponent implements OnInit {
   }
   rgbToHex(r: Number, g: Number, b: Number) {
     return (
-      "#" +
+      '#' +
       this.componentToHex(r) +
       this.componentToHex(g) +
       this.componentToHex(b)
@@ -85,7 +99,7 @@ export class MainComponent implements OnInit {
   }
   componentToHex(c) {
     const hex = c.toString(16);
-    return hex.length === 1 ? "0" + hex : hex;
+    return hex.length === 1 ? '0' + hex : hex;
   }
   hexToRgb(hex) {
     const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);

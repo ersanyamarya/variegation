@@ -1,0 +1,27 @@
+{
+    "weatherData": {
+        "weather": "Clear",
+        "temp": 29.6,
+        "pressure": 948.81,
+        "humidity": 27,
+        "visibility": 0,
+        "wind": {
+            "speed": 1.66,
+            "deg": 176
+        },
+        "clouds": 0
+    },
+    "dht": {
+        "temp": 0,
+        "humidity": 0
+    },
+    "cpu": {
+        "fanStatus": true,
+        "cpuTemp": 37704,
+        "totalmem": "951.58272 Mb",
+        "freemem": "582.361088 Mb",
+        "platform": "linux",
+        "release": "4.9.79-v7+"
+    },
+    "updatedAt": "2/4/2018, 5:25:26 PM"
+}

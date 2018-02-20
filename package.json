@@ -1,33 +1,35 @@
 {
-    "name": "variegation",
-    "license": "MIT",
-    "version": "1.0.0",
-    "description": "This is an IOT web server for variegation",
-    "main": "app.js",
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
-        "start": "node app"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/ersanyamarya/variegation.git"
-    },
-    "keywords": [
-        "iot",
-        "Variegation",
-        "Sanyam Arya"
-    ],
-    "dependencies": {
-        "bcryptjs": "*",
-        "body-parser": "*",
-        "cors": "*",
-        "express": "*",
-        "mongoose": "*",
-        "socket.io": "*"
-    },
-    "author": "Sanyam Arya",
-    "bugs": {
-        "url": "https://github.com/ersanyamarya/variegation/issues"
-    },
-    "homepage": "https://github.com/ersanyamarya/variegation#readme"
+  "name": "variegation",
+  "license": "MIT",
+  "version": "1.0.0",
+  "description": "This is an IOT web server for variegation",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ersanyamarya/variegation.git"
+  },
+  "keywords": [
+    "iot",
+    "Variegation",
+    "Sanyam Arya"
+  ],
+  "dependencies": {
+    "bcryptjs": "*",
+    "body-parser": "*",
+    "colornames": "^1.1.1",
+    "cors": "*",
+    "express": "*",
+    "hex-rgb": "^2.0.0",
+    "mongoose": "*",
+    "socket.io": "*"
+  },
+  "author": "Sanyam Arya",
+  "bugs": {
+    "url": "https://github.com/ersanyamarya/variegation/issues"
+  },
+  "homepage": "https://github.com/ersanyamarya/variegation#readme"
 }

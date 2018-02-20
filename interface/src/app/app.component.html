@@ -26,21 +26,30 @@
 
 <mat-sidenav-container class="container">
     <mat-sidenav #sidenav class="sidenav" mode="push">
-        <button mat-raised-button color="primary" (click)="sidenav.close()">The Light Room</button><br>
+        <button class="sideMenu" mat-raised-button color="primary" (click)="sidenav.close()" (click)="menuSelector='main'"> <mat-icon>highlight</mat-icon> The Light Room</button>
+        <br> <br>
+        <button class="sideMenu" mat-raised-button color="primary" (click)="sidenav.close()" (click)="menuSelector='data-show'"> <mat-icon>data_usage</mat-icon> Data Room</button><br>
+        <br>
+        <button class="sideMenu" mat-raised-button color="primary" (click)="sidenav.close()" (click)="menuSelector='musicbox'"> <mat-icon>music_note</mat-icon> Music Room</button><br>
+
     </mat-sidenav>
     <mat-sidenav-content class="sidenav-content">
-        <app-main></app-main>
+        <app-main *ngIf="menuSelector=='main'"></app-main>
+        <app-data-show *ngIf="menuSelector=='data-show'"></app-data-show>
+        <app-musicbox *ngIf="menuSelector=='musicbox'"></app-musicbox>
+
+
     </mat-sidenav-content>
 </mat-sidenav-container>
 <mat-toolbar color="secondry">
-    <a href="https://github.com/ersanyamarya/variegation" target="_blank">
+    <a href="https://github.com/ersanyamarya/variegation" target="_blank"> &nbsp;
         <img src="https://www.shareicon.net/download/2015/09/15/101512_logo_512x512.png" alt="" width="40dp">
 
     </a>
 
     <span>Repo  <b> Variegation - Web tool for home automation </b></span>
 
-    <span class="example-spacer"></span> Designed By:-
+    <span class="example-spacer"></span> Designed By:- &nbsp;
     <a href="https://sanyamarya.wordpress.com/" target="_blank">
         <img src="https://user-images.githubusercontent.com/28115284/28752842-881291c0-7546-11e7-9277-bd89186ca933.png" alt="">
     </a>

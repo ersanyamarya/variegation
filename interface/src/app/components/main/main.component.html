@@ -1,5 +1,5 @@
 <mat-grid-list cols="4" rowHeight="11:5" [gutterSize]="10">
-    <mat-grid-tile class="tile" [colspan]="4" [rowspan]="1" [style.background-color]="colorValue" *ngIf="lightMode!='partyMode'">
+    <mat-grid-tile class="tile" [colspan]="4" [rowspan]="1" [style.background-color]="colorValue" *ngIf="lightMode!='PARTYMODE'">
         <mat-form-field class="rgbForm">
             <input type="number" matInput placeholder="Red" [(ngModel)]="redValue" name="redValue" (keyup)="onRGBSliderChange()">
         </mat-form-field>
@@ -16,10 +16,10 @@
             <input type="number" matInput placeholder="Yellow" [(ngModel)]="yellowValue" name="yellowValue" (keyup)="onRGBSliderChange()">
         </mat-form-field>
     </mat-grid-tile>
-    <mat-grid-tile class="tile" [colspan]="2" [rowspan]="1" *ngIf="lightMode!='partyMode'">
+    <mat-grid-tile class="tile" [colspan]="2" [rowspan]="1" *ngIf="lightMode!='PARTYMODE'">
         <input class="colorPicker" type="color" [(ngModel)]="colorValue" name="colorValue" (change)="onColorPickerChange()">
     </mat-grid-tile>
-    <mat-grid-tile class="tile" [colspan]="2" [rowspan]="3" *ngIf="lightMode!='partyMode'">
+    <mat-grid-tile class="tile" [colspan]="2" [rowspan]="3" *ngIf="lightMode!='PARTYMODE'">
         RED
         <mat-slider class="mySlider" (change)="onRGBSliderChange()" color="warn" [max]="255" [min]="0" [step]="5" [thumb-label]="true" [(ngModel)]="redValue" [vertical]="true"></mat-slider>
         GREEN
@@ -27,23 +27,23 @@
         BLUE
         <mat-slider class="mySlider" (change)="onRGBSliderChange()" color="warn" [max]="255" [min]="0" [step]="5" [thumb-label]="true" [(ngModel)]="blueValue" [vertical]="true"></mat-slider>
         WHITE
-        <mat-slider class="mySlider" [max]="255" [min]="0" [step]="5" [thumb-label]="true" [(ngModel)]="whiteValue" [vertical]="true"></mat-slider>
+        <mat-slider class="mySlider" (change)="onRGBSliderChange()" [max]="255" [min]="0" [step]="5" [thumb-label]="true" [(ngModel)]="whiteValue" [vertical]="true"></mat-slider>
         YELLOW
-        <mat-slider class="mySlider" color="warn" [max]="255" [min]="0" [step]="5" [thumb-label]="true" [(ngModel)]="yellowValue" [vertical]="true"></mat-slider>
+        <mat-slider class="mySlider" (change)="onRGBSliderChange()" color="warn" [max]="255" [min]="0" [step]="5" [thumb-label]="true" [(ngModel)]="yellowValue" [vertical]="true"></mat-slider>
         <!-- <button mat-raised-button color="primary" (click)="onRGBClick()">Color</button> -->
     </mat-grid-tile>
     <mat-grid-tile class="tile" [colspan]="2" [rowspan]="1">
         <mat-button-toggle-group class="modesSelector" [(ngModel)]="lightMode" (change)="onModeCHange()">
-            <mat-button-toggle value="partyMode">
+            <mat-button-toggle value="PARTYMODE">
                 <mat-icon>group_work</mat-icon> Party Mode !
             </mat-button-toggle>
-            <mat-button-toggle value="syncToColor">
+            <mat-button-toggle value="SYNCMUSICTOCOLOR">
                 <mat-icon>sync</mat-icon> Sync Music to Color
             </mat-button-toggle>
-            <mat-button-toggle value="colorMyRoom">
+            <mat-button-toggle value="COLORMYROOM">
                 <mat-icon>lightbulb_outline</mat-icon> Color My room
             </mat-button-toggle>
-            <mat-button-toggle value="readMode">
+            <mat-button-toggle value="READMODE">
                 <mat-icon>chrome_reader_mode</mat-icon> Reading
             </mat-button-toggle>
         </mat-button-toggle-group>

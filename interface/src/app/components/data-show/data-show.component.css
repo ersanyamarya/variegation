@@ -1,0 +1,83 @@
+.tile {
+    padding: 10dp;
+    box-shadow: rgba(244, 67, 54, 0.5) 2px 2px 12px 2px;
+}
+
+.mySlider {
+    height: 70%;
+    padding: 20px;
+}
+
+.rgbForm {
+    padding: 10px;
+    margin: 10px;
+    font-size: 150%;
+}
+
+.colorPicker {
+    padding: 5px;
+    width: 50%;
+    height: 50%;
+}
+
+.modesSelector {
+    font-size: 120%;
+    background-color: rgba(244, 67, 54, 0.25);
+}
+
+.modeButton {
+    padding: 10px;
+    margin: 10px;
+    font-size: 120%;
+}
+
+.loading {
+    -webkit-animation: rotation 1s infinite linear;
+}
+
+@-webkit-keyframes rotation {
+    from {
+        -webkit-transform: rotate(0deg);
+    }
+    to {
+        -webkit-transform: rotate(359deg);
+    }
+}
+
+.temperature {
+    font-size: 280%;
+    color: #d4e157;
+}
+
+.deg {
+    font-size: 150%;
+    color: #d4e157;
+}
+
+.otherData {
+    font-size: 130%;
+    color: #00acc1;
+}
+
+.headOne {
+    font-size: 180%;
+    color: #ef5350;
+}
+
+.fanBlades {
+    /* box-shadow: rgba(244, 67, 54, 0.5) 2px 2px 12px 2px; */
+    margin-left: 25px;
+    margin-right: 25px;
+    /* border: #00897b solid 8px; */
+    /* padding: 15px; */
+    border-radius: 10%;
+}
+
+.value {
+    color: #d4e157;
+}
+
+.modesSelector {
+    font-size: 120%;
+    background-color: rgba(0, 102, 102, 0.2);
+}
