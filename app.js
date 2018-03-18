@@ -8,16 +8,6 @@ const socketIO = require("socket.io");
 const path = require("path");
 const bodyParser = require("body-parser");
 const cors = require("cors");
-const mongoose = require("mongoose");
-const config = require("./config/utils");
-
-//mongoose.connect(config.database);
-mongoose.connection.on("connected", () => {
-    console.log("Connected to database " + config.database);
-});
-mongoose.connection.on("error", err => {
-    console.log("Database error: " + err);
-});
 
 const io = socketIO(server).of('/ws');
 io.on("connection", socket => {
@@ -27,15 +17,6 @@ io.on("connection", socket => {
     });
 });
 module.exports.SOCKETIO = io;
-
-// module.exports.ios = function(topic, data) {
-//     msg = {
-//         payload: data
-//     };
-//     io.emit(topic, msg);
-//     console.log("topic is: " + topic + " msg: " + msg.payload);
-// };
-
 
 const api = require("./routes/api");
 

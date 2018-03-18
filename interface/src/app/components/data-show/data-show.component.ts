@@ -12,7 +12,7 @@ export class DataShowComponent implements OnInit {
   show: String;
   speakerStatus = true;
   constructor(private statusService: StatusService) {
-    this.socket = io('http://35.154.179.244:8888/ws');
+    this.socket = io('<your URI to ws>');
     this.socket.on('data', msg => {
       this.data = msg;
       this.show = JSON.stringify(msg);

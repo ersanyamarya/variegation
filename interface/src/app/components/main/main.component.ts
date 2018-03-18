@@ -18,7 +18,7 @@ export class MainComponent implements OnInit {
   colorValue = "#333333";
   socket;
   constructor(private statusService: StatusService) {
-    this.socket = io('http://35.154.179.244:8888/ws');
+    this.socket = io('<your URI to ws>');
     this.socket.on('status', msg => {
       this.redValue = msg.led.red;
       this.greenValue = msg.led.green;
